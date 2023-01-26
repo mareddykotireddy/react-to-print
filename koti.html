@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/react-to-print@2.4.0/dist/react-to-print.js"></script>
+</head>
+
+<body> 
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const Example = () => {
+            const printDiv = () => {
+    let prtContent1 = document.getElementById("koti");
+    let prtContent2 = document.getElementById("hello");
+    let WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+    WinPrint.document.write(prtContent1.innerHTML);
+    WinPrint.document.write(prtContent2.innerHTML);
+    WinPrint.document.close();
+    WinPrint.focus();
+    WinPrint.print();
+    WinPrint.close();
+}
+
+
+            return (
+                <div>
+                    <div id="koti">
+                        AWS Databases Are Built for Business Critical, Enterprise Workloads. Start Today for Free.
+                        Industry-Leading Scalability, Data Availability, Security, and Performance. Sign Up. Free Tier Details.
+                        Secure Solutions. Hands-On Experience. Database Services. In-Memory Caching.
+                    </div>
+                    <div id="hello">
+                        AWS Databases Are Built for Business Critical, Enterprise Workloads. Start Today for Free.
+                        Industry-Leading Scalability, Data Availability, Security, and Performance. Sign Up. Free Tier Details.
+                        Secure Solutions. Hands-On Experience. Database Services. In-Memory Caching.
+                        </div>
+                    <input type="button" value="click" onClick={printDiv} />
+                </div>
+            );
+        };
+        ReactDOM.render(<Example />, document.getElementById("root"));
+    </script>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-to-print@2.7.2/dist/react-to-print.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const MyComponentToPrint = () => {
+        return (
+          <div>
+            <h1> AWS Databases Are Built for Business Critical, Enterprise Workloads. Start Today for Free.
+                        Industry-Leading Scalability, Data Availability, Security, and Performance. Sign Up. Free Tier Details.
+                        Secure Solutions. Hands-On Experience. Database Services. In-Memory Caching.</h1>
+            <p>It can be any valid JSX</p>
+          </div>
+        );
+      };
+
+      const PrintButton = React.forwardRef((props, ref) => {
+        return (
+          <ReactToPrint
+            trigger={() => <button>Print</button>}
+            content={() => ref}
+          />
+        );
+      });
+
+      const WrappedPrintButton = React.forwardRef((props, ref) => {
+        return (
+          <div>
+            <PrintButton ref={ref} />
+            <MyComponentToPrint ref={ref} />
+          </div>
+        );
+      });
+      
+      ReactDOM.render(<WrappedPrintButton />, document.getElementById("root"));
+    </script>
+  </body>
+</html> -->
+

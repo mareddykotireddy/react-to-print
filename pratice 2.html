@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- <script crossorigin="text/javascript" src="jquery-min.js" ></script> -->
+
+    <!-- <script crossorigin src="https://unpkg.com/print-js@1.6.0/dist/print.js"></script> -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+
+    <!-- <script crossorigin="https://cdnjs.cloudflare.com/ajax/libs/printThis/1.15.0/printThis.min.js"
+        integrity="sha512-d5Jr3NflEZmFDdFHZtxeJtBzk0eB+kkRXWFQqEc1EKmolXjHm2IKCA7kTvXBNjIYzjXfD5XzIjaaErpkZHCkBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+
+    <!-- <script crossorigin="https://cdnjs.cloudflare.com/ajax/libs/printThis/1.15.0/printThis.js"
+        integrity="sha512-Fd3EQng6gZYBGzHbKd52pV76dXZZravPY7lxfg01nPx5mdekqS8kX4o1NfTtWiHqQyKhEGaReSf4BrtfKc+D5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+    <!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
+    <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+        <!-- <script src="
+        https://cdn.jsdelivr.net/npm/reactjs-print@1.0.1/lib/index.min.js
+        "></script> -->
+
+
+    <!-- hello -->
+    <script crossorigin="
+    https://cdn.jsdelivr.net/npm/react-to-print@2.14.11/lib/index.min.js
+    "></script>
+    
+    <!-- <script src=" https://requirejs.org/docs/release/2.3.5/minified/require.js"></script> -->
+    <title>Document</title>
+    <link rel="stylesheet" href="pratice.css">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type='module'>
+        // const {react}=react
+
+        // const { useState } = React
+        const { ReactToPrint } = react-to-print
+
+        
+        // import { ReactToPrint } from 'react-to-print';
+        // const ReactToPrint = require('react-to-print')
+
+        // import $ from 'useReactToPrint';
+
+
+        // const ReactToPrint = require('react-print')
+
+        function Welcome() {
+            // const [state, setState] = useState('hello')
+            // const componentRef = useRef();
+            // const handlePrint = useReactToPrint({
+            //     content: () => dataToPrintRef.current
+            // });
+
+
+            const Example = () => {
+                    const componentRef = useRef();
+                //     const handlePrint = useReactToPrint({
+                //         content: () => componentRef.current,
+                //     });
+            }
+
+            console.log(state);
+            // console.log(state);
+
+            function koti() {
+
+                // alert('working');
+            }
+            return (
+                <div>
+                    <div id="koti">
+
+                        <h3>A content delivery network (CDN) refers to a geographically distributed
+                            group of servers which work together to provide fast delivery
+                            of Internet content</h3> </div>
+
+                    <input type="button" value="click" onClick={koti} />
+
+                    <ReactToPrint
+                        trigger={() => <button>Print this out!</button>}
+                        // content={() => componentRef.current}
+
+                    />
+             
+                </div>
+            )
+        }
+
+        // const root = ReactDOM.createRoot(document.getElementById('root'));
+        // root.render(<Welcome />)
+
+    </script>
+    <!-- <input type="button" onClick="print({koti})" value="print" /> -->
+    <!-- <button onclick="windows.print()">print</button> -->
+    <!-- <script src="./print.js"></script> -->
+</body>
+
+</html>

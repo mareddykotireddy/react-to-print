@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- <script src="https://unpkg.com/react-to-print@1.9.0/dist/react-to-print.min.js"></script> -->
+    <!-- <script crossorigin="
+    https://cdn.jsdelivr.net/npm/react-to-print@2.14.11/lib/index.min.js
+    "></script> -->
+    <!-- <script src=" https://requirejs.org/docs/release/2.3.5/minified/require.js"></script> -->
+    <script src="
+        https://cdn.jsdelivr.net/npm/reactjs-print@1.0.1/lib/index.min.js
+        "></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+     const { ReactToPrint } = React
+    // const ReactToPrint = ReactToPrint.ReactToPrint
+
+    function Welcome() {
+        const Example = () => {
+            const componentRef = useRef(null);
+
+            return (
+                <div>
+                    <div id="koti">
+                        AWS Databases Are Built for Business Critical, Enterprise Workloads. Start Today for Free.
+                        Industry-Leading Scalability, Data Availability, Security, and Performance. Sign Up. Free Tier Details.
+                        Secure Solutions. Hands-On Experience. Database Services. In-Memory Caching.
+                    </div>
+                    <ReactToPrint
+                        trigger={() => <button>Print this out!</button>}
+                        // content={() => this.componentRef}
+                        content={() => componentRef.current}
+
+                    />
+                 
+                        <Example ref={componentRef} />
+
+                    
+                </div>
+            );
+        };
+        ReactDOM.render(<Example />, document.getElementById("root"));
+    }
+    </script>
+</body>
+
+</html>

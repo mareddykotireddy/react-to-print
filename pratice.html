@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- <script crossorigin src="https://unpkg.com/print-js@1.6.0/dist/print.js"></script> -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+
+    
+    <!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
+    <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
+    <!-- <script type="module" src="main.js"></script> -->
+
+    <!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script> -->
+    <!-- <script src=" https://requirejs.org/docs/release/2.3.5/minified/require.js"></script> -->
+    <title>Document</title>
+    <link rel="stylesheet" href="pratice.css">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type='text/babel'>
+        const { useState } = React
+        const { ReactToPrint}=React-to-print
+        function Welcome() {
+            const [state, setState] = useState('hello')
+            console.log(state);
+            // console.log(state);
+            function koti() {
+                // alert('working');
+            }
+            return (
+
+                <div>
+                    
+
+                    <div id="koti">
+                        <h3> A content delivery network (CDN) refers to a geographically distributed
+                            group of servers which work together to provide fast delivery
+                            of Internet content</h3>
+                    </div>
+                    <div id="hello">
+                        <h2>A CDN allows for the quick transfer of assets needed for loading Internet
+                            content including HTML pages, javascript files,
+                            stylesheets, images, and videos.</h2>
+                    </div>
+                    <input type="button" value="click" onClick={koti} />
+                </div>
+            )
+        }
+
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<Welcome />)
+    </script>
+    <!-- <input type="button" onClick="print({koti})" value="print" /> -->
+    <!-- <button onclick="windows.print()">print</button> -->
+</body>
+
+</html>
